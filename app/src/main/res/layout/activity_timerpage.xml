@@ -49,7 +49,7 @@
         android:fontFamily="@font/scmedium"
         android:text="Total Time Focused:"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="19dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
