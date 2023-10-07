@@ -51,8 +51,18 @@ public class homepage extends AppCompatActivity {
 
         //Add planner page code here
 
+        // Find the button by its ID
+        View buttonGoToDestination2 = findViewById(R.id.button);
+        buttonGoToDestination2.setOnClickListener(new View.OnClickListener() {
 
+            @Override
+            public void onClick(View v) {
+// Define what happens when the button is clicked
+                Intent intent = new Intent(homepage.this, plannerpage.class);
+                startActivity(intent);
 
+            }
+        });
 
 
 

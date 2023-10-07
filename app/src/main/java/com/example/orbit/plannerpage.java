@@ -5,11 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class resourcepage extends AppCompatActivity {
+public class plannerpage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resourcepage);
+        setContentView(R.layout.activity_plannerpage);
     }
 }
