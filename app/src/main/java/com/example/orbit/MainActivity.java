@@ -16,7 +16,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Find the button by its ID
-        @SuppressLint("WrongViewCast") Button buttonGoToDestination = findViewById(R.id.imageButton4);
+        View buttonGoToDestination = findViewById(R.id.imageButton4);
+
+
+
 
         // Set an OnClickListener for the button
         buttonGoToDestination.setOnClickListener(new View.OnClickListener() {
