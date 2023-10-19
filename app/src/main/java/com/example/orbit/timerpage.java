@@ -16,6 +16,8 @@ public class timerpage extends AppCompatActivity {
     private TextView countdownTextView;
     private CountDownTimer countDownTimer;
     private long timeLeftInMillis;
+    private Button button6;
+    private boolean isPaused = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +26,8 @@ public class timerpage extends AppCompatActivity {
 
         timeEditText = findViewById(R.id.timeEditText);
         button4 = findViewById(R.id.button4);
-        countdownTextView = findViewById(R.id.countdownTextView);
+        countdownTextView = findViewById(R.id.countdownText);
+
 
 
         button4.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +36,40 @@ public class timerpage extends AppCompatActivity {
                 startTimer();
             }
         });
+
+        button6 = findViewById(R.id.button6);
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                togglePause();
+            }
+        });
+
+    }
+    private void togglePause() {
+        if (countDownTimer != null) {
+            if (isPaused) {
+                // Resume the timer
+                countDownTimer = new CountDownTimer(timeLeftInMillis, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                        timeLeftInMillis = millisUntilFinished;
+                        updateCountdownText();
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        countdownTextView.setText("Countdown: 0");
+                    }
+                }.start();
+
+                isPaused = false;
+            } else {
+                // Pause the timer
+                countDownTimer.cancel();
+                isPaused = true;
+            }
+        }
     }
 
     private void startTimer() {
@@ -55,8 +92,12 @@ public class timerpage extends AppCompatActivity {
     }
 
     private void updateCountdownText() {
-        long seconds = timeLeftInMillis / 1000;
-        countdownTextView.setText("Countdown: " + seconds);
+        long hours = timeLeftInMillis / 3600000; // 1 hour = 3600000 milliseconds
+        long minutes = (timeLeftInMillis % 3600000) / 60000; // 1 minute = 60000 milliseconds
+        long seconds = (timeLeftInMillis % 60000) / 1000; // 1 second = 1000 milliseconds
+
+        countdownTextView.setText("Time Left: " + hours + "h " + minutes + "m " + seconds + "s");
     }
+
 }
 

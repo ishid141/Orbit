@@ -37,6 +37,7 @@
      android:layout_height="wrap_content"
      android:fontFamily="@font/scmedium"
      android:hint="Enter time in seconds"
+     android:textColorHint="@color/grey"
      android:textColor="@color/white"
      app:layout_constraintBottom_toBottomOf="parent"
      app:layout_constraintEnd_toEndOf="parent"
@@ -75,16 +76,17 @@
         app:layout_constraintVertical_bias="0.754" />
 
     <TextView
-     android:id="@+id/countdownTextView"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     app:layout_constraintTop_toBottomOf="@id/button4"
-     app:layout_constraintStart_toStartOf="parent"
-     app:layout_constraintEnd_toEndOf="parent"
-     android:text="Set: 00:00:00"
-     android:fontFamily="@font/scmedium"
-     android:textColor="@color/white"
-     android:textSize="30dp"/>
+        android:id="@+id/countdownText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="115dp"
+        android:text="Time Left: 0h 0m 0s"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        android:fontFamily="@font/scmedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/timeEditText" />
 
 
     <!-- <Button
