@@ -19,6 +19,22 @@
         app:layout_constraintVertical_bias="0.024"
         app:srcCompat="@drawable/plannerimage" />
 
+
+    <EditText
+        android:id="@+id/todoInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/scmedium"
+        android:hint="Enter a new task"
+        android:inputType="text"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.27" />
+
     <Button
         android:id="@+id/addTodoButton"
         android:layout_width="wrap_content"
@@ -35,7 +51,7 @@
         android:id="@+id/todoList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="88dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
