@@ -20,15 +20,20 @@ public class resourcepage extends AppCompatActivity {
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Define the action to be taken when the link is clicked (e.g., open a website)
+                // Define the action to be taken when the link is clicked
+                //Open youtube Link
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/channel/UCEWpbFLzoYGPfuWUMFPSaoA"));
                 startActivity(intent);
 
 
             }
         });
+
+        //find textView with ID
         TextView textView1 = findViewById(R.id.textView4);
+        //set onclick listener (responsible for responding to user actions)
         textView1.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
                 // Define the action to be taken when the link is clicked (e.g., open a website)

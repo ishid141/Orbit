@@ -24,12 +24,12 @@ public class timerpage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timerpage);
 
+        //intialize elements
         timeEditText = findViewById(R.id.timeEditText);
         button4 = findViewById(R.id.button4);
         countdownTextView = findViewById(R.id.countdownText);
 
-
-
+        //listener for start button
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +37,9 @@ public class timerpage extends AppCompatActivity {
             }
         });
 
+        //initialize
         button6 = findViewById(R.id.button6);
+        //listener for pause button
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -46,6 +48,8 @@ public class timerpage extends AppCompatActivity {
         });
 
     }
+
+    //method pauses and resumes timer
     private void togglePause() {
         if (countDownTimer != null) {
             if (isPaused) {
@@ -72,10 +76,12 @@ public class timerpage extends AppCompatActivity {
         }
     }
 
+    //method - starts timer
     private void startTimer() {
         String timeText = timeEditText.getText().toString();
         if (!timeText.isEmpty()) {
-            long timeInMillis = Long.parseLong(timeText) * 1000; // Convert seconds to milliseconds
+            long timeInMinutes = Long.parseLong(timeText);
+            long timeInMillis = timeInMinutes * 60 * 1000;// Convert seconds to milliseconds
             countDownTimer = new CountDownTimer(timeInMillis, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
@@ -91,6 +97,7 @@ public class timerpage extends AppCompatActivity {
         }
     }
 
+    //method - updates countdown text on screen
     private void updateCountdownText() {
         long hours = timeLeftInMillis / 3600000; // 1 hour = 3600000 milliseconds
         long minutes = (timeLeftInMillis % 3600000) / 60000; // 1 minute = 60000 milliseconds

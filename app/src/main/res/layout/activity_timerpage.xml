@@ -36,7 +36,7 @@
      android:layout_width="wrap_content"
      android:layout_height="wrap_content"
      android:fontFamily="@font/scmedium"
-     android:hint="Enter time in seconds"
+     android:hint="Enter time in minutes"
      android:textColorHint="@color/grey"
      android:textColor="@color/white"
      app:layout_constraintBottom_toBottomOf="parent"
