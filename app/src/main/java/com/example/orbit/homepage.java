@@ -3,6 +3,8 @@ package com.example.orbit;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class homepage extends AppCompatActivity {
@@ -23,5 +25,35 @@ public class homepage extends AppCompatActivity {
         if (name != null && !name.isEmpty()) {
             textViewWelcome.setText("Hello, " + name + "!");
         }
+
+        // Set OnClickListener for Planner button
+        Button buttonPlanner = findViewById(R.id.button);
+        buttonPlanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(homepage.this, plannerpage.class);
+                startActivity(intent);
+            }
+        });
+
+        // Set OnClickListener for Resource button
+        Button buttonResource = findViewById(R.id.button2);
+        buttonResource.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(homepage.this, resourcepage.class);
+                startActivity(intent);
+            }
+        });
+
+        // Set OnClickListener for Timer button
+        Button buttonTimer = findViewById(R.id.button3);
+        buttonTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(homepage.this, timerpage.class);
+                startActivity(intent);
+            }
+        });
     }
 }
