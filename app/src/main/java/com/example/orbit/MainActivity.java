@@ -1,35 +1,34 @@
 package com.example.orbit;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
+import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
+import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity extends AppCompatActivity {
+
+    private TextInputEditText textInputEditText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Find the button by its ID
-        View buttonGoToDestination = findViewById(R.id.imageButton4);
+        textInputEditText = findViewById(R.id.textInputEditText);
+        ImageButton buttonGoToDestination = findViewById(R.id.imageButton4);
 
-
-
-
-        // Set an OnClickListener for the button
         buttonGoToDestination.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
-// Define what happens when the button is clicked
-                Intent intent = new Intent(MainActivity.this, homepage.class);
-                startActivity(intent);
-
+                String name = textInputEditText.getText().toString().trim();
+                if (!name.isEmpty()) {
+                    Intent intent = new Intent(MainActivity.this, homepage.class);
+                    intent.putExtra("NAME", name);
+                    startActivity(intent);
+                }
             }
         });
     }
