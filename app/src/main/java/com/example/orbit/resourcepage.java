@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.net.Uri;
 
@@ -167,7 +168,46 @@ public class resourcepage extends AppCompatActivity {
 
             }
         });
+        // Set OnClickListener for Planner button
+        ImageButton imageButtonPlanner = findViewById(R.id.imageButton5);
+        imageButtonPlanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(resourcepage.this, plannerpage.class);
+                startActivity(intent);
+            }
+        });
 
+        // Set OnClickListener for Resource button
+        ImageButton imageButtonResource = findViewById(R.id.imageButton7);
+        imageButtonResource.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(resourcepage.this, resourcepage.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // Set OnClickListener for Timer button
+        ImageButton imageButtonTimer = findViewById(R.id.imageButton6);
+        imageButtonTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(resourcepage.this, timerpage.class);
+                startActivity(intent);
+            }
+        });
+
+        // Set OnClickListener for Home button
+        ImageButton imageButtonHome = findViewById(R.id.imageButton8);
+        imageButtonHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(resourcepage.this, homepage.class);
+                startActivity(intent);
+            }
+        });
     }
 
 

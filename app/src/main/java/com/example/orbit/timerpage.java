@@ -8,6 +8,7 @@ import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class timerpage extends AppCompatActivity {
@@ -46,6 +47,50 @@ public class timerpage extends AppCompatActivity {
                 togglePause();
             }
         });
+
+        // Set OnClickListener for Planner button
+        ImageButton imageButtonPlanner = findViewById(R.id.imageButton5);
+        imageButtonPlanner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(timerpage.this, plannerpage.class);
+                startActivity(intent);
+            }
+        });
+
+        // Set OnClickListener for Resource button
+        ImageButton imageButtonResource = findViewById(R.id.imageButton7);
+        imageButtonResource.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(timerpage.this, resourcepage.class);
+                startActivity(intent);
+            }
+        });
+
+
+        // Set OnClickListener for Timer button
+        ImageButton imageButtonTimer = findViewById(R.id.imageButton6);
+        imageButtonTimer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(timerpage.this, timerpage.class);
+                startActivity(intent);
+            }
+        });
+
+        // Set OnClickListener for Home button
+        ImageButton imageButtonHome = findViewById(R.id.imageButton8);
+        imageButtonHome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(timerpage.this, homepage.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
     }
 
